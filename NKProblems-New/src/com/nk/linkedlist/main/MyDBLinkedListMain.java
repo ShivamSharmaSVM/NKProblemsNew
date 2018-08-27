@@ -12,7 +12,9 @@ public class MyDBLinkedListMain
 //		insertOpAtTop(list);
 //		insertOpAtLast(list);
 //		System.out.println(list.length);
-		insertOpAt(list);
+		insertOpAt(list);	
+		list.printAll();
+		delete(list);
 		list.printAll();
 //		delete(list);
 		
@@ -42,11 +44,11 @@ public class MyDBLinkedListMain
 		list.addAt(60,4);
 	}
 	
-	/*public static void delete(MyDBLinkedList list) throws InvalidOperationException
+	public static void delete(MyDBLinkedList<Integer> list) throws InvalidOperationException
 	{
 		list.deleteAt(1);
 		list.deleteAtLast();
 		list.deleteAtTop();
-		list.deleteAt(1);
-	}*/
+		list.deleteAt(list.length);
+	}
 }

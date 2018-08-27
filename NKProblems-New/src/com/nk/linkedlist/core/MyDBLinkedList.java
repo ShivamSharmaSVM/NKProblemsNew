@@ -111,4 +111,60 @@ public class MyDBLinkedList<T>
 		}
 		System.out.println("NULL");
 	}
+	
+	public void deleteAtTop() throws InvalidOperationException
+	{
+		if(length == 0 )
+			throw new InvalidOperationException("List is already empty");
+		
+		head = head.next;
+		if(head != null)
+			head.prev = null;
+		
+		length--;
+	}
+	
+	public void deleteAtLast() throws InvalidOperationException
+	{
+		if(length == 0 )
+			throw new InvalidOperationException("List is already empty");
+		
+		Node tempNode = head;
+		while(tempNode.next != null && tempNode.next.next != null)
+		{
+			tempNode = tempNode.next;
+		}
+		
+		tempNode.next = null;
+		
+		length--;
+	}
+	
+	public void deleteAt(int pos) throws InvalidOperationException
+	{
+		if(length==0)
+			throw new InvalidOperationException("List is already empty");
+		if(pos<=0 || pos > length)
+			throw new InvalidOperationException("Invaild position to delete");
+		
+		if(pos == 1)
+		{
+			head = head.next;
+			if(head != null)
+				head.prev = null;
+			length--;
+			return;
+		}
+		
+		Node tempNode = head;
+		int cursor = 1;
+		while(cursor < pos-1)
+		{
+			tempNode = tempNode.next;
+		}
+		
+		tempNode.next = null;
+		
+		length--;
+	}
 }
