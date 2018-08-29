@@ -14,8 +14,8 @@ public class MyCircularLinkedListMain
 //		System.out.println(list.length);
 //		insertOpAt(list);	
 		list.printAll();
-//		delete(list);
-//		list.printAll();
+		delete(list);
+		list.printAll();
 //		delete(list);
 		
 	}
@@ -44,11 +44,11 @@ public class MyCircularLinkedListMain
 		list.addAt(60,4);
 	}
 	
-	/*public static void delete(MyCircularLinkedList<Integer> list) throws InvalidOperationException
+	public static void delete(MyCircularLinkedList<Integer> list) throws InvalidOperationException
 	{
 		list.deleteAt(1);
 		list.deleteAtLast();
 		list.deleteAtTop();
-		list.deleteAt(list.length);
-	}*/
+		list.deleteAt(1);
+	}
 }
