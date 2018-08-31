@@ -4,14 +4,14 @@ import com.nk.linkedlist.exceptions.InvalidOperationException;
 
 public class MyLinkedList
 {
-	Node head=null;
+	protected Node head=null;
 	
-	class Node
+	protected class Node
 	{
-		int data;
-		Node next;
+		public int data;
+		public Node next;
 		
-		Node(int data)
+		public Node(int data)
 		{
 			this.data = data;
 			next = null;
