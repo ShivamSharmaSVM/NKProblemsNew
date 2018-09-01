@@ -23,4 +23,16 @@ public class MyList<T>
 			return "["+data+"]";
 		}
 	}
+	
+	public void attach(MyList<T> list2)
+	{
+		Node current = this.head;
+		
+		while(current.next != null || current.next != this.head)
+		{
+			current = current.next;
+		}
+		
+		current.next = list2.head;
+	}
 }

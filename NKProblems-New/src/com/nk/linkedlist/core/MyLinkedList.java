@@ -1,5 +1,6 @@
 package com.nk.linkedlist.core;
 
+import com.nk.linkedlist.core.MyList.Node;
 import com.nk.linkedlist.exceptions.InvalidOperationException;
 
 public class MyLinkedList<T> extends MyList<T>
