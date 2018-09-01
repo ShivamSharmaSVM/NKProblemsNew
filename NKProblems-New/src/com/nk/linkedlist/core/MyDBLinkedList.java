@@ -2,30 +2,9 @@ package com.nk.linkedlist.core;
 
 import com.nk.linkedlist.exceptions.InvalidOperationException;
 
-public class MyDBLinkedList<T>
+public class MyDBLinkedList<T> extends MyList<T>
 {
-	private Node head;
 	public int length;
-	
-	class Node
-	{
-		T data;
-		Node next;
-		Node prev;
-		
-		Node(T data)
-		{
-			this.data = data;
-			next = null;
-			prev = null;
-		}
-		
-		@Override
-		public String toString()
-		{
-			return "["+data+"]";
-		}
-	}
 	
 	public void addAtTop(T data)
 	{

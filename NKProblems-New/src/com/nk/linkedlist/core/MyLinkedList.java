@@ -2,16 +2,16 @@ package com.nk.linkedlist.core;
 
 import com.nk.linkedlist.exceptions.InvalidOperationException;
 
-public class MyLinkedList
+public class MyLinkedList<T> extends MyList<T>
 {
 	protected Node head=null;
 	
 	protected class Node
 	{
-		public int data;
+		public T data;
 		public Node next;
 		
-		public Node(int data)
+		public Node(T data)
 		{
 			this.data = data;
 			next = null;
@@ -24,14 +24,14 @@ public class MyLinkedList
 		}
 	}
 	
-	public void addAtTop(int data)
+	public void addAtTop(T data)
 	{
 		Node newNode = new Node(data);
 		newNode.next = head;
 		head = newNode;
 	}
 	
-	public void addAtLast(int data)
+	public void addAtLast(T data)
 	{
 		Node newNode = new Node(data);
 		
@@ -50,7 +50,7 @@ public class MyLinkedList
 		tempNode.next = newNode;
 	}
 	
-	public void addAt(int data, int pos) throws InvalidOperationException
+	public void addAt(T data, int pos) throws InvalidOperationException
 	{
 		if(pos<1)
 			throw new InvalidOperationException("Invalid position");

@@ -6,7 +6,7 @@ package com.nk.linkedlist.problems;
 
 import com.nk.linkedlist.core.MyLinkedList;
 
-class SortedLinkedList extends MyLinkedList
+class SortedLinkedList extends MyLinkedList<Integer>
 {
 	public static void main(String args[])
 	{
@@ -20,7 +20,7 @@ class SortedLinkedList extends MyLinkedList
 		list.printAll();
 	}
 	
-	public void insertInSortedWay(int data)
+	public void insertInSortedWay(Integer data)
 	{
 		Node newNode = new Node(data);
 		if (head == null)

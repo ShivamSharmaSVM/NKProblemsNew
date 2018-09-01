@@ -1,30 +1,9 @@
 package com.nk.linkedlist.core;
 
-import com.nk.linkedlist.core.MyDBLinkedList.Node;
 import com.nk.linkedlist.exceptions.InvalidOperationException;
 
-public class MyCircularLinkedList<T>
+public class MyCircularLinkedList<T> extends MyList<T>
 {
-	Node head;
-
-	private class Node
-	{
-		T data;
-		Node next;
-
-		Node(T data)
-		{
-			this.data = data;
-			next = this;
-		}
-
-		@Override
-		public String toString()
-		{
-			return "[" + data + "]";
-		}
-	}
-
 	public void addAtTop(T data)
 	{
 		Node newNode = new Node(data);
