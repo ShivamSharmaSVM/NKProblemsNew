@@ -8,7 +8,7 @@ public class MyDBLinkedList<T> extends MyList<T>
 	
 	public void addAtTop(T data)
 	{
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 		if(head != null)
 		{
 			head.prev=newNode;
@@ -28,8 +28,8 @@ public class MyDBLinkedList<T> extends MyList<T>
 			return;
 		}
 		
-		Node tempNode = head;
-		Node newNode = new Node(data);
+		Node<T> tempNode = head;
+		Node<T> newNode = new Node<T>(data);
 		
 		while(tempNode.next != null)
 		{
@@ -47,7 +47,7 @@ public class MyDBLinkedList<T> extends MyList<T>
 		if(pos<1 || pos>length+1)
 			throw new InvalidOperationException("Invalid position");
 		
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 		int cursor = 1;
 		if(head == null)
 		{
@@ -62,7 +62,7 @@ public class MyDBLinkedList<T> extends MyList<T>
 			throw new InvalidOperationException("Linked list too small to add at given position.");
 		}
 		
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		while(cursor < pos-1)
 		{
 			cursor++;
@@ -81,7 +81,7 @@ public class MyDBLinkedList<T> extends MyList<T>
 	
 	public void printAll()
 	{
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		System.out.print("HEAD<==>");
 		while(tempNode != null)
 		{
@@ -108,7 +108,7 @@ public class MyDBLinkedList<T> extends MyList<T>
 		if(length == 0 )
 			throw new InvalidOperationException("List is already empty");
 		
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		while(tempNode.next != null && tempNode.next.next != null)
 		{
 			tempNode = tempNode.next;
@@ -135,7 +135,7 @@ public class MyDBLinkedList<T> extends MyList<T>
 			return;
 		}
 		
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		int cursor = 1;
 		while(cursor < pos-1)
 		{
@@ -145,5 +145,10 @@ public class MyDBLinkedList<T> extends MyList<T>
 		tempNode.next = null;
 		
 		length--;
+	}
+	
+	public Node<T> getHead()
+	{
+		return head;
 	}
 }

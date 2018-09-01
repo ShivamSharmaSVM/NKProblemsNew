@@ -5,6 +5,7 @@
 package com.nk.linkedlist.problems;
 
 import com.nk.linkedlist.core.MyLinkedList;
+import com.nk.linkedlist.core.Node;
 
 class SortedLinkedList extends MyLinkedList<Integer>
 {
@@ -22,15 +23,15 @@ class SortedLinkedList extends MyLinkedList<Integer>
 	
 	public void insertInSortedWay(Integer data)
 	{
-		Node newNode = new Node(data);
+		Node<Integer> newNode = new Node<Integer>(data);
 		if (head == null)
 		{
 			head = newNode;
 			return;
 		}
 
-		Node current = head;
-		Node tempNode = head;
+		Node<Integer> current = head;
+		Node<Integer> tempNode = head;
 		while (current != null && current.data < data)
 		{
 			tempNode = current;

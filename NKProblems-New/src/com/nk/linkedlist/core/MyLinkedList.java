@@ -1,40 +1,21 @@
 package com.nk.linkedlist.core;
 
-import com.nk.linkedlist.core.MyList.Node;
 import com.nk.linkedlist.exceptions.InvalidOperationException;
 
 public class MyLinkedList<T> extends MyList<T>
 {
-	protected Node head=null;
-	
-	protected class Node
-	{
-		public T data;
-		public Node next;
-		
-		public Node(T data)
-		{
-			this.data = data;
-			next = null;
-		}
-		
-		@Override
-		public String toString()
-		{
-			return "["+data+"]";
-		}
-	}
+	protected Node<T> head=null;
 	
 	public void addAtTop(T data)
 	{
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 		newNode.next = head;
 		head = newNode;
 	}
 	
 	public void addAtLast(T data)
 	{
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 		
 		if(head == null)
 		{
@@ -43,7 +24,7 @@ public class MyLinkedList<T> extends MyList<T>
 		}
 		
 
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		while(tempNode.next != null)
 		{
 			tempNode = tempNode.next;
@@ -56,8 +37,8 @@ public class MyLinkedList<T> extends MyList<T>
 		if(pos<1)
 			throw new InvalidOperationException("Invalid position");
 		
-		Node tempHead = head;
-		Node newNode = new Node(data);
+		Node<T> tempHead = head;
+		Node<T> newNode = new Node<T>(data);
 		int cursor = 1;
 		
 		if(head == null)
@@ -106,7 +87,7 @@ public class MyLinkedList<T> extends MyList<T>
 			return;
 		}
 		
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		while(tempNode.next.next != null)
 		{
 			tempNode = tempNode.next;
@@ -132,7 +113,7 @@ public class MyLinkedList<T> extends MyList<T>
 			return;
 		}
 		
-		Node tempHead = head;
+		Node<T> tempHead = head;
 		int cursor = 1;
 			
 		while(cursor<pos-1 && tempHead.next != null)
@@ -154,7 +135,7 @@ public class MyLinkedList<T> extends MyList<T>
 	
 	public void printAll()
 	{
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		System.out.print("HEAD==>");
 		while(tempNode != null)
 		{
@@ -162,5 +143,27 @@ public class MyLinkedList<T> extends MyList<T>
 			tempNode = tempNode.next;
 		}
 		System.out.println("NULL");
+	}
+	
+	public Node<T> getHead()
+	{
+		return head;
+	}
+	
+	public void attach(MyList<T> list2)
+	{
+		Node<T> current = this.getHead();
+		if(current == null)
+		{ 
+			head = list2.getHead();
+			return;
+		}
+		
+		while(current.next != null)
+		{
+			current = current.next;
+		}
+		
+		current.next = list2.getHead();
 	}
 }

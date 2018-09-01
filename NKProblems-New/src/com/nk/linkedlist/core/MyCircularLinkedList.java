@@ -6,7 +6,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 {
 	public void addAtTop(T data)
 	{
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 		if (head == null)
 		{
 			head = newNode;
@@ -14,7 +14,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 		}
 
 		newNode.next = head;
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		while (tempNode.next != head)
 		{
 			tempNode = tempNode.next;
@@ -26,7 +26,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 
 	public void addAtLast(T data)
 	{
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 		if (head == null)
 		{
 			head = newNode;
@@ -34,14 +34,13 @@ public class MyCircularLinkedList<T> extends MyList<T>
 		}
 
 		newNode.next = head;
-		Node tempNode = head;
-		while (tempNode.next != head)
+		Node<T> tempNode = head;
+		while (tempNode.next!= null && tempNode.next != head)
 		{
 			tempNode = tempNode.next;
 		}
 
 		tempNode.next = newNode;
-		head = newNode;
 	}
 
 	public void addAt(T data, int pos) throws InvalidOperationException
@@ -49,7 +48,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 		if (pos <= 0)
 			throw new InvalidOperationException("Invalid position");
 
-		Node newNode = new Node(data);
+		Node<T> newNode = new Node<T>(data);
 
 		if (head == null)
 		{
@@ -61,7 +60,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 			throw new InvalidOperationException("Invalid position");
 		}
 
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		int cursor = 1;
 		while (cursor < pos - 1 && tempNode.next != head)
 		{
@@ -85,7 +84,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 			return;
 		}
 		final char UP_ARROW = (char) 65514;
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		System.out.print("HEAD");
 		String listString = "";
 		String listSecondString = "                      " + UP_ARROW;
@@ -119,7 +118,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 			return;
 		}
 
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		while (tempNode.next != head)
 		{
 			tempNode = tempNode.next;
@@ -140,7 +139,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 			return;
 		}
 
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		while (tempNode.next.next != head)
 		{
 			tempNode = tempNode.next;
@@ -170,7 +169,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 		}
 		
 
-		Node tempNode = head;
+		Node<T> tempNode = head;
 		int cursor = 1;
 
 		while (cursor < pos - 1 && tempNode.next.next != head)
@@ -187,4 +186,8 @@ public class MyCircularLinkedList<T> extends MyList<T>
 			throw new InvalidOperationException("Invalid position");
 	}
 
+	public Node<T> getHead()
+	{
+		return head;
+	}
 }
