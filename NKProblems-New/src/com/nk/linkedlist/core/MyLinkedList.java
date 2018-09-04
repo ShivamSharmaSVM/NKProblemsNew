@@ -4,7 +4,7 @@ import com.nk.linkedlist.exceptions.InvalidOperationException;
 
 public class MyLinkedList<T> extends MyList<T>
 {
-	protected Node<T> head=null;
+	public Node<T> head=null;
 	
 	public void addAtTop(T data)
 	{
@@ -141,6 +141,17 @@ public class MyLinkedList<T> extends MyList<T>
 		{
 			System.out.print(tempNode+"==>");
 			tempNode = tempNode.next;
+		}
+		System.out.println("NULL");
+	}
+	
+	public static void printAll(Node<Integer> head)
+	{
+		System.out.print("HEAD==>");
+		while(head != null)
+		{
+			System.out.print(head+"==>");
+			head = head.next;
 		}
 		System.out.println("NULL");
 	}
