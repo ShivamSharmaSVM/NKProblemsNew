@@ -1,7 +1,7 @@
 package com.nk.linkedlist.main;
 
+import com.nk.exception.InvalidOperationException;
 import com.nk.linkedlist.core.MyCircularLinkedList;
-import com.nk.linkedlist.exceptions.InvalidOperationException;
 
 public class MyCircularLinkedListMain
 {

@@ -1,4 +1,4 @@
-package com.nk.linkedlist.exceptions;
+package com.nk.exception;
 
 public class InvalidOperationException extends Exception
 {

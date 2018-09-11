@@ -1,6 +1,6 @@
 package com.nk.linkedlist.core;
 
-import com.nk.linkedlist.exceptions.InvalidOperationException;
+import com.nk.exception.InvalidOperationException;
 
 public class MyLinkedList<T> extends MyList<T>
 {
@@ -159,6 +159,11 @@ public class MyLinkedList<T> extends MyList<T>
 	public Node<T> getHead()
 	{
 		return head;
+	}
+	
+	public void setHead(Node<T> head)
+	{
+		this.head = head;
 	}
 	
 	public void attach(MyList<T> list2)

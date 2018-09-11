@@ -1,6 +1,6 @@
 package com.nk.linkedlist.core;
 
-import com.nk.linkedlist.exceptions.InvalidOperationException;
+import com.nk.exception.InvalidOperationException;
 
 public class MyCircularLinkedList<T> extends MyList<T>
 {
