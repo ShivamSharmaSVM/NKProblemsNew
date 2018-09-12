@@ -2,20 +2,20 @@ package com.nk.stack.core;
 
 import com.nk.exception.StackUnderflowException;
 
-public class SimpleStack
+public class SimpleStackDblSizeIncr
 {
 	private int top;
 	private int length;
 	private int[] stackArray;
 	
-	public SimpleStack()
+	public SimpleStackDblSizeIncr()
 	{
 		top = -1;
 		length = 0;
 		stackArray = new int[5];
 	}
 	
-	public SimpleStack(int size)
+	public SimpleStackDblSizeIncr(int size)
 	{
 		top = 0;
 		length = 0;
@@ -61,7 +61,7 @@ public class SimpleStack
 	
 	private void createNewStack()
 	{
-		int temp[] = new int[stackArray.length+1];
+		int temp[] = new int[stackArray.length*2];
 		
 		for(int i=0; i<stackArray.length; i++)
 		{

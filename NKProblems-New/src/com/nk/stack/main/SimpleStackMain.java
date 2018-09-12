@@ -1,8 +1,10 @@
+package com.nk.stack.main;
+import com.nk.exception.StackUnderflowException;
 import com.nk.stack.core.SimpleStack;
 
 public class SimpleStackMain
 {
-	public static void main(String args[])
+	public static void main(String args[]) throws StackUnderflowException
 	{
 		SimpleStack stack = new SimpleStack();
 		
@@ -20,6 +22,14 @@ public class SimpleStackMain
 		stack.push(70);
 		
 		stack.printAll();
+		
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
+		stack.pop();
 		
 		System.out.println(stack.length());
 		
