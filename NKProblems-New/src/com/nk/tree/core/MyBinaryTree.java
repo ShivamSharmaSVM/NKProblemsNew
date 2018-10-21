@@ -9,6 +9,11 @@ public class MyBinaryTree
 		root = null;
 	}
 	
+	public MyBinaryTree(Node root)
+	{
+		this.root = root;
+	}
+	
 	public Node getRoot()
 	{
 		return root;
@@ -23,6 +28,7 @@ public class MyBinaryTree
 	{
 		Node tempRoot = root;
 		getPreOrderTraversalRecur(tempRoot);
+		System.out.println();
 	}
 	
 	public void getPreOrderTraversalRecur(Node tempRoot)
@@ -30,7 +36,7 @@ public class MyBinaryTree
 		if(tempRoot == null)
 			return;
 		
-		System.out.print(tempRoot);
+		System.out.print(tempRoot+" ");
 		getPreOrderTraversalRecur(tempRoot.leftNode);
 		getPreOrderTraversalRecur(tempRoot.rightNode);	
 	}
@@ -39,6 +45,7 @@ public class MyBinaryTree
 	{
 		Node tempRoot = root;
 		getPostOrderTraversalRecur(tempRoot);
+		System.out.println();
 	}
 	
 	public void getPostOrderTraversalRecur(Node tempRoot)
@@ -55,6 +62,7 @@ public class MyBinaryTree
 	{
 		Node tempRoot = root;
 		getInOrderTraversalRecur(tempRoot);
+		System.out.println();
 	}
 	
 	public void getInOrderTraversalRecur(Node tempRoot)

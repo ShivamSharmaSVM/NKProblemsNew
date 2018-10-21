@@ -23,6 +23,17 @@ public class Node
 		this.rightNode = new Node(data);
 	}
 	
+	public void setLeftNode(Node node)
+	{
+		this.leftNode = node;
+	}
+	
+	public void setRightNode(Node node)
+	{
+		this.rightNode = node;
+	}
+	
+
 	public Node getLeftNode()
 	{
 		return leftNode;
@@ -58,6 +69,7 @@ public class Node
 	{
 		return this.leftNode!=null;
 	}
+	
 	public boolean hasRightNode()
 	{
 		return this.rightNode!=null;
