@@ -122,12 +122,17 @@ public class MyLinkedList<T> extends MyList<T>
 			tempHead = tempHead.next;			
 		}
 		
-		System.out.println("Deleting node "+tempHead.next);
 		
 		if(cursor == pos-1)
 		{
-			tempHead = tempHead.next;
-			return;
+			
+			if(tempHead.next != null)
+			{
+				System.out.println("Deleting node "+tempHead.next);
+				tempHead.next = tempHead.next.next;
+			}
+			else
+				throw new InvalidOperationException("Invalid position");
 		}
 		else
 		  throw new InvalidOperationException("Invalid position");

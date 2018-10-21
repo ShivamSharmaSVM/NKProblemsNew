@@ -55,6 +55,7 @@ public class MyCircularLinkedList<T> extends MyList<T>
 			if (pos == 1)
 			{
 				head = newNode;
+				newNode.next = head;
 				return;
 			}
 			throw new InvalidOperationException("Invalid position");
