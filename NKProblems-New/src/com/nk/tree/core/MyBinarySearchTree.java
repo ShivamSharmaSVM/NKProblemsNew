@@ -72,4 +72,67 @@ public class MyBinarySearchTree
 		if(n.hasRightNode())
 			getInorderTraversal(n.getRightNode());
 	}
+	
+	public static MyBinarySearchTree getComplexBinarySearchTree()
+	{
+		MyBinarySearchTree tree = new MyBinarySearchTree();
+		Node root = tree.getRoot();
+		
+		/*
+		 * Creating a Complex Binary Search tree
+		 *                  (5)
+		 *                /    \
+		 *             (3)      (8)
+		 *             / \     /   \
+		 *          (1)  (4) (6)    (12)
+		 *           \        \     /  \ 
+		 *           (2)	  (7)  (10) (13)
+		 *           			   /  \
+		 *                       (9) (11) 
+		 */
+		
+		root = new Node(5);
+		root.setLeftNode(3);
+		root.setRightNode(8);
+		
+		root.getLeftNode().setLeftNode(1);
+		root.getLeftNode().setRightNode(4);
+		root.getLeftNode().getLeftNode().setRightNode(2);
+		
+		root.getRightNode().setLeftNode(6);
+		root.getRightNode().setRightNode(12);
+		root.getRightNode().getLeftNode().setRightNode(7);
+		
+		root.getRightNode().getRightNode().setLeftNode(10);
+		root.getRightNode().getRightNode().setRightNode(13);
+		
+		root.getRightNode().getRightNode().getLeftNode().setLeftNode(9);
+		root.getRightNode().getRightNode().getLeftNode().setRightNode(11);
+		
+		tree.setRoot(root);
+		
+		return tree;
+	}
+	
+	public Node find(Node n, int data)
+	{
+		int temp = n.getValue(); 
+		if(temp==data)
+			return n;
+		
+		if(temp>data)
+		{
+			if(n.hasLeftNode())
+				return find(n.getLeftNode(), data);
+			else
+				return null;
+		}
+		else
+		{
+			if(n.hasRightNode())
+				return find(n.getRightNode(), data);
+			else
+				return null;
+		}
+	}
 }

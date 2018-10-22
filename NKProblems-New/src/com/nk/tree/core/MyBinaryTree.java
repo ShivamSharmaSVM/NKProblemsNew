@@ -110,7 +110,7 @@ public class MyBinaryTree
 		Node root = tree.getRoot();
 		
 		/*
-		 * Creating a Simple Binary tree
+		 * Creating a Complex Binary tree
 		 *                  (1)
 		 *                /    \
 		 *             (2)      (3)

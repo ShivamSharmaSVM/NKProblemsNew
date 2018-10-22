@@ -6,7 +6,7 @@ public class BSTInoderTraversalRecur
 {
 	public static void main(String[] args)
 	{
-		MyBinarySearchTree bst = MyBinarySearchTree.getSimpleBinarySearchTree();
+		MyBinarySearchTree bst = MyBinarySearchTree.getComplexBinarySearchTree();
 		bst.inoderTraversal();
 	}
 }
