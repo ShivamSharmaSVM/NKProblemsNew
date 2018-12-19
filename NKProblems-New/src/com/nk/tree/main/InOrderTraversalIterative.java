@@ -28,8 +28,9 @@ public class InOrderTraversalIterative
 			{
 				Node temp = stack.pop();
 				System.out.print(temp+" ");
-				if(temp.getRightNode() != null)
+//				if(temp.getRightNode() != null)
 					current = temp.getRightNode();
+				
 			}
 		}
 	}
