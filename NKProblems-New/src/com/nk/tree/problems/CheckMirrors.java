@@ -29,7 +29,7 @@ public class CheckMirrors
 		if(!(root1!=null && root2!=null))
 			return false;
 		
-		if(!root1.isEqual(root2))
+		if(!root1.equals(root2))
 			return false;
 		
 		boolean isLeftMirror = areMirrors(root1.getLeftNode(), root2.getRightNode());
