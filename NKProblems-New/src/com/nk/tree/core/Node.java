@@ -1,6 +1,6 @@
 package com.nk.tree.core;
 
-public class Node
+public class Node implements Comparable<Node>
 {
 	int data;
 	Node leftNode;
@@ -75,8 +75,37 @@ public class Node
 		return this.rightNode!=null;
 	}
 	
-	public boolean isEqual(Node node2)
+	@Override
+	public boolean equals(Object node2)
 	{
-		return this.data==node2.getValue();
+		return this.data==((Node) node2).getValue();
 	}
+
+	public boolean isGreator(Node node)
+	{
+		return this.data > node.getValue();
+	}
+	
+	public boolean isSmaller(Node node)
+	{
+		return this.data < node.getValue();
+	}
+	
+	@Override
+	public int compareTo(Node node)
+	{
+		if(this.data == node.getValue())
+			return 0;
+		
+		if(this.data > node.getValue())
+			return 1;
+		
+		return -1;
+	}
+	
+	public void setValue(int data)
+	{
+		this.data = data;
+	}
+	
 }
